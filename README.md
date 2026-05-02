@@ -39,11 +39,17 @@ GestaoContratos/Backend/
    ```sh
    dotnet restore
    ```
-4. **Execute a aplicação**
+4. **Configuração banco de dados SQL Server 22 (necessário docker instalado)**
+   ```sh
+   docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<@SenhaSegura@123>" \
+   -p 1433:1433 --name sqlserver \
+   -d mcr.microsoft.com/mssql/server:2022-latest
+   ```
+5. **Execute a aplicação**
    ```sh
    dotnet run --project GestaoContratos.API
    ```
-5. **Acesse a API**
+6. **Acesse a API**
    - Por padrão, a API será iniciada em `https://localhost:7009`.
    - A documentação via Swagger pode ser acessada em `https://localhost:7009/swagger`.
 
